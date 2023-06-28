@@ -92,7 +92,8 @@ class _firstScreenState extends State<firstScreen> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.orange,width: 1),
+                      borderSide: BorderSide(color: Colors.green
+                          ,width: 1),
                     ),
                   ),
 
@@ -100,6 +101,118 @@ class _firstScreenState extends State<firstScreen> {
               },
             )
           ),
+          SizedBox(height: MediaQuery.of(context).size.height/16,),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 50),
+          child: MaterialButton(
+            onPressed: (){},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(),
+                Text("Sign - In",style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22
+                ),),
+                Icon(Icons.arrow_forward_rounded,color: Colors.white,),
+
+
+              ],
+            ),
+            color: Colors.orangeAccent,
+            height: MediaQuery.of(context).size.height/16,
+            minWidth: MediaQuery.of(context).size.width/1.2,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(7)),
+                borderSide: BorderSide(color: Colors.transparent)
+            ),
+          ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height/80,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(),
+              Row(
+                children: [
+                  Container(
+
+                    width: MediaQuery.of(context).size.width/10,
+                    height: MediaQuery.of(context).size.height/24,
+                    child: Icon(Icons.facebook , color: Colors.blue,size: 33,),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 8,
+                            spreadRadius: 5,
+                            offset: Offset(2,2),
+                          )
+                        ]
+                    ),
+                  ),
+                  SizedBox(width: 14,),
+                  Container(
+
+                    width: MediaQuery.of(context).size.width/10,
+                    height: MediaQuery.of(context).size.height/24,
+                    child: Icon(Icons.g_mobiledata_sharp , color: Colors.orangeAccent,size: 33,),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 8,
+                            spreadRadius: 5,
+                            offset: Offset(2,2),
+                          )
+                        ]
+                    ),
+                  ),
+                  SizedBox(width: 14,),
+                  Container(
+
+                    width: MediaQuery.of(context).size.width/10,
+                    height: MediaQuery.of(context).size.height/24,
+                    child: Icon(Icons.abc , color: Colors.blue,size: 33,),
+
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 8,
+                            spreadRadius: 5,
+                            offset: Offset(2,2),
+                          )
+                        ]
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(),
+              Row(
+                children: [
+                  Text('Dont have account :'),
+                  TextButton(onPressed: (){},
+                      child: Text('Sign Up')
+
+                  ),
+                ],
+              ),
+              SizedBox(),
+            ],
+          ),
+
+
 
 
 
