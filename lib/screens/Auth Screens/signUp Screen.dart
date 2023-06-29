@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
+import 'package:notification_app/State%20Managment/Login%20Provider.dart';
+import 'package:provider/provider.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -11,6 +14,15 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
+
+    final username_provideer = Provider.of<username_provider>(context , listen: false);
+    final email_provideer = Provider.of<signup_email_provider>(context , listen: false);
+    final password_provideer = Provider.of<signup_password_provider>(context,listen: false);
+    final confirmpassword_provideer  = Provider.of<confirmpassword_provider>(context,listen: false);
+    final checkboxProvideer = Provider.of<checkboxProvider>(context, listen: false);
+
+    print("build is called");
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -19,64 +31,74 @@ class _SignUpState extends State<SignUp> {
           children: [
             Image.asset("assets/images/signup.jpg",height: MediaQuery.of(context).size.height/3,),
             SizedBox(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-            child: TextField(
-              decoration: InputDecoration(
-                  labelText: "Username",
-                  hintText: "Enter Your Username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(color: Colors.transparent),
+            Consumer<username_provider>(builder: (context , value ,child){
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: TextField(
+                  decoration: InputDecoration(
+                      labelText: "Username",
+                      hintText: "Enter Your Username",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.transparent),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.orangeAccent),
+                      )
+
                   ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: Colors.orangeAccent),
-                )
-
-              ),
-
-            ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30,vertical: 2),
-              child: TextField(
-                decoration: InputDecoration(
-                    labelText: "Email",
-                    hintText: "Enter Your Email",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.transparent),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.orangeAccent),
-                    )
 
                 ),
+              );
+            }),
+            Consumer<signup_email_provider>(builder: (context,value , child){
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30,vertical: 2),
+                child: TextField(
+                  onChanged: (value){
 
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
-                decoration: InputDecoration(
-                    labelText: "Password",
-                    hintText: "Enter Your Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.transparent),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.orangeAccent),
-                    )
+                  },
+                  decoration: InputDecoration(
+                      labelText: "Email",
+                      hintText: "Enter Your Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.transparent),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.orangeAccent),
+                      )
+
+                  ),
 
                 ),
+              );
+            }),
+           Consumer<signup_password_provider>(builder: (context,value , child){
+             return  Padding(
+               padding: EdgeInsets.symmetric(horizontal: 30),
+               child: TextField(
+                 decoration: InputDecoration(
+                     labelText: "Password",
+                     hintText: "Enter Your Password",
+                     border: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(10)),
+                       borderSide: BorderSide(color: Colors.transparent),
+                     ),
+                     focusedBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(10)),
+                       borderSide: BorderSide(color: Colors.orangeAccent),
+                     )
 
-              ),
-            ),
-            Padding(
+                 ),
+
+               ),
+             );
+           },),
+          Consumer<confirmpassword_provider>(builder: (context,value , child){
+            return   Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
                 decoration: InputDecoration(
@@ -94,12 +116,17 @@ class _SignUpState extends State<SignUp> {
                 ),
 
               ),
-            ),
+            );
+          }),
            Padding(
              padding: const EdgeInsets.symmetric(horizontal: 27),
              child: Row(
                children: [
-                 Checkbox(value: false, onChanged: (value){}),
+                Consumer<checkboxProvider>(builder: (context, value , child){
+                  return  Checkbox(value: false, onChanged: (value){
+
+                  });
+                }),
                  Text("Do You agree with Policies , Agrement & Licenses ",style: TextStyle(color: Colors.red),)
                ],
              ),

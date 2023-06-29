@@ -48,3 +48,29 @@ class confirmpassword_provider with ChangeNotifier{
   }
 
 }
+
+
+//checkbox provider
+
+class checkboxProvider with ChangeNotifier{
+
+  bool checkbox_value = false ;
+
+  bool get get_checkbox_value => checkbox_value ;
+
+  void setCheckBoxValue(value){
+
+    if(value==false){
+      value= true ;
+      notifyListeners();
+    }
+    else{
+      value = false ;
+      notifyListeners() ;
+    }
+
+
+  }
+
+
+}
