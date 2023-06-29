@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
@@ -20,6 +23,7 @@ class _firstScreenState extends State<firstScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(height: MediaQuery.of(context).size.height/12,),
          Center(
@@ -46,6 +50,7 @@ class _firstScreenState extends State<firstScreen> {
             child: Consumer<email_provider>(
               builder: (context,value,child){
                 return TextField(
+
                   onChanged: (value){
                     email_provideer.set_email_value(value);
                   },
@@ -101,7 +106,7 @@ class _firstScreenState extends State<firstScreen> {
               },
             )
           ),
-          SizedBox(height: MediaQuery.of(context).size.height/16,),
+          SizedBox(height: MediaQuery.of(context).size.height/35,),
           Padding(padding: EdgeInsets.symmetric(horizontal: 50),
           child: MaterialButton(
             onPressed: (){},
@@ -139,7 +144,7 @@ class _firstScreenState extends State<firstScreen> {
 
                     width: MediaQuery.of(context).size.width/10,
                     height: MediaQuery.of(context).size.height/24,
-                    child: Icon(Icons.facebook , color: Colors.blue,size: 33,),
+                    child: Center(child: FaIcon(FontAwesomeIcons.facebook,color: Colors.blue,),),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         boxShadow: [
@@ -157,7 +162,7 @@ class _firstScreenState extends State<firstScreen> {
 
                     width: MediaQuery.of(context).size.width/10,
                     height: MediaQuery.of(context).size.height/24,
-                    child: Icon(Icons.g_mobiledata_sharp , color: Colors.orangeAccent,size: 33,),
+                    child: Center(child: FaIcon(FontAwesomeIcons.google , color: Colors.redAccent.withOpacity(0.5),),),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         boxShadow: [
@@ -175,7 +180,7 @@ class _firstScreenState extends State<firstScreen> {
 
                     width: MediaQuery.of(context).size.width/10,
                     height: MediaQuery.of(context).size.height/24,
-                    child: Icon(Icons.abc , color: Colors.blue,size: 33,),
+                    child: Center(child: FaIcon(FontAwesomeIcons.github),),
 
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -194,7 +199,11 @@ class _firstScreenState extends State<firstScreen> {
               SizedBox(),
             ],
           ),
-
+          SizedBox(),SizedBox(),SizedBox(),
+          SizedBox(),SizedBox(),SizedBox(),
+          SizedBox(),SizedBox(),SizedBox(),
+          SizedBox(),SizedBox(),SizedBox(),
+          SizedBox(),SizedBox(),SizedBox(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

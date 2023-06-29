@@ -1,7 +1,9 @@
 import "package:flutter/material.dart";
 import 'package:intro_slider/intro_slider.dart';
 import 'package:notification_app/State Managment//Login%20Provider.dart';
-import 'package:notification_app/firstScreen.dart';
+import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
+import 'package:notification_app/screens/Auth%20Screens/login.dart';
+import 'package:notification_app/screens/Auth%20Screens/signUp%20Screen.dart';
 import 'package:provider/provider.dart';
 
 void main(){
@@ -19,10 +21,17 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (_)=>email_provider()),
       ChangeNotifierProvider(create :(_)=>password_provider()),
+      ChangeNotifierProvider(create: (_)=>username_provider(),),
+      ChangeNotifierProvider(create: (_)=>signup_email_provider()),
+      ChangeNotifierProvider(create: (_)=>signup_password_provider()),
+      ChangeNotifierProvider(create: (_)=>confirmpassword_provider()),
+
+
     ],
     builder: (context,child){
       return MaterialApp(
-        home: firstScreen(),
+        debugShowCheckedModeBanner: false,
+        home: SignUp(),
       );
     },
     );
