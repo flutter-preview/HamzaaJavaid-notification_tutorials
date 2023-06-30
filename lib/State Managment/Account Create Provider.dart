@@ -60,14 +60,8 @@ class checkboxProvider with ChangeNotifier{
 
   void setCheckBoxValue(value){
 
-    if(value==false){
-      value= true ;
-      notifyListeners();
-    }
-    else{
-      value = false ;
-      notifyListeners() ;
-    }
+    checkbox_value = value;
+    notifyListeners();
 
 
   }

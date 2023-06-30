@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 void main(){
 
   runApp(
-   MyApp()
+   const MyApp()
      );
 }
 
@@ -30,9 +30,9 @@ class MyApp extends StatelessWidget {
 
     ],
     builder: (context,child){
-      return MaterialApp(
+      return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SignUp(),
+        home: SignIn(),
       );
     },
     );
@@ -110,7 +110,7 @@ class _IntroScreensState extends State<IntroScreens> {
 
   void onDonePress() {
    // log("End of slides");
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>const firstScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignIn()));
   }
 
 
