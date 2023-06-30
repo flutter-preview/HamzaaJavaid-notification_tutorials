@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(create: (_)=>signup_password_provider()),
       ChangeNotifierProvider(create: (_)=>confirmpassword_provider()),
       ChangeNotifierProvider(create: (_)=>checkboxProvider()),
-
+      
 
     ],
     builder: (context,child){
