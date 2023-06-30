@@ -21,8 +21,7 @@ class _SignUpState extends State<SignUp> {
     final confirmpassword_provideer  = Provider.of<confirmpassword_provider>(context,listen: false);
     final checkboxProvideer = Provider.of<checkboxProvider>(context, listen: false);
 
-    print("build is called");
-
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
