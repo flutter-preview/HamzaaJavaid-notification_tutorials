@@ -4,6 +4,7 @@ import 'package:notification_app/State Managment//Login%20Provider.dart';
 import 'package:notification_app/State%20Managment/Account%20Create%20Provider.dart';
 import 'package:notification_app/screens/Auth%20Screens/login.dart';
 import 'package:notification_app/screens/Auth%20Screens/signUp%20Screen.dart';
+import 'package:notification_app/screens/MainDashBoard/Dashboard.dart';
 import 'package:provider/provider.dart';
 
 void main(){
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     builder: (context,child){
       return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SignIn(),
+        home: MainDashboard(),
       );
     },
     );
