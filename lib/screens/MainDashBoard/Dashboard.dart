@@ -24,7 +24,7 @@ class MainDashboard extends StatelessWidget {
                             colors: [
 
                               Colors.orangeAccent.withOpacity(0.4),
-                              Colors.orangeAccent.withOpacity(0.6)
+                              Colors.cyan.withOpacity(0.6)
                             ],
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight
@@ -35,7 +35,12 @@ class MainDashboard extends StatelessWidget {
                             blurRadius: 2,
                             spreadRadius: 2,
                           )
-                        ]
+                        ],
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/welcome.png',),
+                        scale: 4,
+                        opacity: 0.4
+                      )
                     ),
                     height: MediaQuery.of(context).size.height/4,
                     width: MediaQuery.of(context).size.width/2.2,
@@ -50,11 +55,14 @@ class MainDashboard extends StatelessWidget {
                           Row(
                             children: [
                               SizedBox(width: MediaQuery.of(context).size.width/20,),
-                              FaIcon(
-                                FontAwesomeIcons.faceSmile,
-                                size: MediaQuery.of(context).size.height/14,
-                                color: Colors.white60,
-                              ),
+                             Opacity(
+                               opacity: 0.8,
+                               child: CircleAvatar(
+                                 radius: 30,
+                                 backgroundColor: Colors.transparent,
+                                // backgroundImage: AssetImage('assets/images/profilcPic.png',),
+                               ),
+                             )
                             ],
                           ),
                           SizedBox(height: MediaQuery.of(context).size.height/20,),
@@ -165,7 +173,7 @@ class MainDashboard extends StatelessWidget {
                                blurRadius: 2,
                                spreadRadius: 2,
                              )
-                           ]
+                           ],
                        ),
                        height: MediaQuery.of(context).size.height/6,
                        width: MediaQuery.of(context).size.width/2.6,
@@ -227,7 +235,11 @@ class MainDashboard extends StatelessWidget {
                                blurRadius: 2,
                                spreadRadius: 2,
                              )
-                           ]
+                           ],
+                         image: DecorationImage(
+                           opacity: 0.3,
+                           image: AssetImage('assets/images/notification.png'),
+                         )
                        ),
                        height: MediaQuery.of(context).size.height/4.2,
                        width: MediaQuery.of(context).size.width/2.6,
@@ -326,6 +338,7 @@ class MainDashboard extends StatelessWidget {
                           height: MediaQuery.of(context).size.height/6,
                           width: MediaQuery.of(context).size.width/4,
                         ),
+                        
                       ],
                     ),
                     SizedBox(),SizedBox(),SizedBox(),SizedBox(),
@@ -337,7 +350,7 @@ class MainDashboard extends StatelessWidget {
                           fontSize:14,
                         ),),
                         SizedBox(width: 30,),
-                        FaIcon(FontAwesomeIcons.arrowRight,color: Colors.deepOrangeAccent,size: 22,)
+                        FaIcon(FontAwesomeIcons.arrowRight,color: Colors.white,size: 22,)
                       ],
                     ),
                   ],
