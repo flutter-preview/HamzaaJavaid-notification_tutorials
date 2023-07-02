@@ -63,7 +63,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 );
               }),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Consumer<signup_email_provider>(builder: (context,value , child){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 2),
@@ -89,7 +89,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 );
               }),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Consumer<signup_password_provider>(builder: (context,value , child){
                 return  Padding(
                   padding:const  EdgeInsets.symmetric(horizontal: 30),
@@ -115,7 +115,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 );
               },),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Consumer<confirmpassword_provider>(builder: (context,value , child){
                 return   Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -162,7 +162,7 @@ class _SignUpState extends State<SignUp> {
                         );
 
                     }),
-                     Text("Do You agree with Policies , Agrement &\n licenses ",style: TextStyle(color: Colors.red),)
+                     const Text("Do You agree with Policies , Agrement &\n licenses ",style: TextStyle(color: Colors.red),)
                   ],
                 ),
               ),

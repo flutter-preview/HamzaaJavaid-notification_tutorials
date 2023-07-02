@@ -7,7 +7,36 @@ class MainDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        bottomNavigationBar: Container(
+          //color: Colors.deepOrangeAccent.withOpacity(0.4),
+          height: 60,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.blue.withOpacity(0.6),
+                Colors.purpleAccent.withOpacity(0.6)
+              ],
+            ),
+            borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(20),
+                topLeft: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20)
+            ),
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FaIcon(FontAwesomeIcons.home,color: Colors.white,size: 20,),
+              FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
+              CircleAvatar(radius: 26,
+                backgroundColor: Colors.white,child: FaIcon(FontAwesomeIcons.add,color: Colors.orangeAccent,size: 20,),
+              ),
+              FaIcon(FontAwesomeIcons.video,color: Colors.white,size: 20,),
+              Icon(Icons.person,color: Colors.white,)
+            ],
+          ),
+        ),
       body: Stack(
         children: [
           //1st Column Items
@@ -19,7 +48,7 @@ class MainDashboard extends StatelessWidget {
                 child: Container(
                     decoration: BoxDecoration(
                         color: Colors.cyanAccent,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: const BorderRadius.all(Radius.circular(20)),
                         gradient: LinearGradient(
                             colors: [
 
@@ -29,14 +58,14 @@ class MainDashboard extends StatelessWidget {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight
                         ),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black12,
                             blurRadius: 2,
                             spreadRadius: 2,
                           )
                         ],
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage('assets/images/welcome.png',),
                         scale: 4,
                         opacity: 0.4
@@ -55,7 +84,7 @@ class MainDashboard extends StatelessWidget {
                           Row(
                             children: [
                               SizedBox(width: MediaQuery.of(context).size.width/20,),
-                             Opacity(
+                             const Opacity(
                                opacity: 0.8,
                                child: CircleAvatar(
                                  radius: 30,
@@ -66,7 +95,7 @@ class MainDashboard extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: MediaQuery.of(context).size.height/20,),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("WELCOME \nBACK", style: TextStyle(
@@ -88,7 +117,7 @@ class MainDashboard extends StatelessWidget {
                 child: Container(
                     decoration: BoxDecoration(
                         color: Colors.cyanAccent,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius: const BorderRadius.all(Radius.circular(20)),
                         gradient: LinearGradient(
                             colors: [
 
@@ -98,7 +127,7 @@ class MainDashboard extends StatelessWidget {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight
                         ),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black12,
                             blurRadius: 2,
@@ -115,7 +144,7 @@ class MainDashboard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: MediaQuery.of(context).size.height/30,),
-                         Row(
+                         const Row(
                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                            children: [
                              SizedBox(),
@@ -127,7 +156,7 @@ class MainDashboard extends StatelessWidget {
                            ],
                          ),
                           SizedBox(height: MediaQuery.of(context).size.height/40,),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text("Follow Us", style: TextStyle(
@@ -157,7 +186,7 @@ class MainDashboard extends StatelessWidget {
                    child: Container(
                        decoration: BoxDecoration(
                            color: Colors.cyanAccent,
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                           borderRadius: const BorderRadius.all(Radius.circular(20)),
                            gradient: LinearGradient(
                                colors: [
 
@@ -167,7 +196,7 @@ class MainDashboard extends StatelessWidget {
                                begin: Alignment.centerLeft,
                                end: Alignment.centerRight
                            ),
-                           boxShadow: [
+                           boxShadow: const [
                              BoxShadow(
                                color: Colors.black12,
                                blurRadius: 2,
@@ -192,11 +221,11 @@ class MainDashboard extends StatelessWidget {
                                    size: MediaQuery.of(context).size.height/20,
                                    color: Colors.white,
                                  ),
-                                 SizedBox(),SizedBox(),SizedBox(),
+                                 const SizedBox(),const SizedBox(),const SizedBox(),
                                ],
                              ),
-                             SizedBox(height: 20,),
-                             Row(
+                             const SizedBox(height: 20,),
+                             const Row(
                                mainAxisAlignment: MainAxisAlignment.center,
                                children: [
                                  Text("Learn Flutter", style: TextStyle(
@@ -219,7 +248,7 @@ class MainDashboard extends StatelessWidget {
                    child: Container(
                        decoration: BoxDecoration(
                            color: Colors.cyanAccent,
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                           borderRadius: const BorderRadius.all(Radius.circular(20)),
                            gradient: LinearGradient(
                                colors: [
 
@@ -229,14 +258,14 @@ class MainDashboard extends StatelessWidget {
                                begin: Alignment.centerLeft,
                                end: Alignment.centerRight
                            ),
-                           boxShadow: [
+                           boxShadow: const [
                              BoxShadow(
                                color: Colors.black12,
                                blurRadius: 2,
                                spreadRadius: 2,
                              )
                            ],
-                         image: DecorationImage(
+                         image: const DecorationImage(
                            opacity: 0.3,
                            image: AssetImage('assets/images/notification.png'),
                          )
@@ -258,10 +287,10 @@ class MainDashboard extends StatelessWidget {
                                  size: MediaQuery.of(context).size.height/15,
                                  color: Colors.white60,
                                ),
-                                 SizedBox(),SizedBox(),
+                                 const SizedBox(),const SizedBox(),
                              ],),
                              SizedBox(height: MediaQuery.of(context).size.height/20,),
-                             Row(
+                             const Row(
                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                children: [
                                  Text("Notifications\nHandling", style: TextStyle(
@@ -285,25 +314,25 @@ class MainDashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: MediaQuery.of(context).size.height/1.8,),
-              Padding(padding: EdgeInsets.symmetric(horizontal: 15),child: Text("Join CPC COMMUNITY",style: TextStyle(
+              const Padding(padding: EdgeInsets.symmetric(horizontal: 15),child: Text("Join CPC COMMUNITY",style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,color: Colors.black
               ),),),
               SizedBox(height: MediaQuery.of(context).size.height/25,),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 43),
+                padding: const EdgeInsets.symmetric(horizontal: 43),
                 child: Container(
                 height: MediaQuery.of(context).size.height/5,
                 width: MediaQuery.of(context).size.width/1.2,
                   decoration: BoxDecoration(
 
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       alignment: Alignment.topRight,
                       opacity: 0.4,
                       image: AssetImage('assets/images/2.png',),
                     ),
-                    color: Color.fromRGBO(72, 128, 217, 0.7),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: const Color.fromRGBO(72, 128, 217, 0.7),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       gradient: LinearGradient(
                         colors: [
                            //Color.fromRGBO(72, 128, 217, 0.9),
@@ -313,7 +342,7 @@ class MainDashboard extends StatelessWidget {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft
                       ),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 2,
@@ -324,11 +353,11 @@ class MainDashboard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(),
+                    const SizedBox(),
                     Row(
                       children: [
-                        SizedBox(width: 10,),
-                        Text('Be Part Of Biggest \nTech Community \nof Peshawar',style: TextStyle(
+                        const SizedBox(width: 10,),
+                        const Text('Be Part Of Biggest \nTech Community \nof Peshawar',style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 18
@@ -338,11 +367,11 @@ class MainDashboard extends StatelessWidget {
                           height: MediaQuery.of(context).size.height/6,
                           width: MediaQuery.of(context).size.width/4,
                         ),
-                        
+
                       ],
                     ),
-                    SizedBox(),SizedBox(),SizedBox(),SizedBox(),
-                    Row(
+                    const SizedBox(),const SizedBox(),const SizedBox(),const SizedBox(),
+                    const Row(
                       children: [
                         SizedBox(width: 20,),
                         Text('APPLICATIONS ARE OPENED NOW ',style: TextStyle(
@@ -364,34 +393,7 @@ class MainDashboard extends StatelessWidget {
 
         ],
       ),
-      bottomNavigationBar: Container(
-        //color: Colors.deepOrangeAccent.withOpacity(0.4),
-        height: 60,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.blue.withOpacity(0.6),
-              Colors.purpleAccent.withOpacity(0.6)
-            ],
-          ),
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(20),
-            topLeft: Radius.circular(20),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            FaIcon(FontAwesomeIcons.home,color: Colors.white,size: 20,),
-            FaIcon(FontAwesomeIcons.bell,color: Colors.white,size: 20,),
-            CircleAvatar(radius: 26,child: FaIcon(FontAwesomeIcons.add,color: Colors.orangeAccent,size: 20,),
-            backgroundColor: Colors.white,
-            ),
-            FaIcon(FontAwesomeIcons.video,color: Colors.white,size: 20,),
-            Icon(Icons.person,color: Colors.white,)
-          ],
-        ),
-      ),
+
     );
   }
 }
